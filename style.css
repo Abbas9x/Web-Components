@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+
+* {
+    margin: 0px;
+    font-family: "Montserrat";
+    transition: 1s linear;
+}
+
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    overflow: hidden;
+
+}
+
+.left {
+    background-color: #222222;
+    height: 100vh;
+    width: 50vw;
+    background-attachment: fixed;
+    background-position: 50% calc(50% + 20px);
+    background-size: 1050px;
+    background-repeat: no-repeat;
+    background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/dualsense-controller-product-thumbnail-01-en-14sep21?$facebook$");
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+
+}
+
+.l-items {
+    position: absolute;
+    left: 5vw;
+}
+
+.right {
+    width: 50vw;
+    height: 100vh;
+    background-image: url("https://scufgaming.com/media/prismic/6d795422-45c5-4813-880c-72b9bd5260c1_instinct_base_black_xbox_series_x_controller_850x600.png");
+    background-repeat: no-repeat;
+    background-position: 50% calc(50% - 1px);
+    background-attachment: fixed;
+    background-size: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    overflow: visible;
+
+
+
+}
+
+.r-items {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    position: relative;
+    right: 5vw;
+}
+
+
+
+h1 {
+
+    font-size: 50px;
+}
+
+.left h1 {
+    color: white;
+
+
+}
+
+
+.btn {
+
+    font-size: 1rem;
+    text-transform: uppercase;
+    background-color: transparent;
+    padding: 1rem;
+    width: 11vw;
+    margin: 2rem 0 0 0;
+    border: 3px solid;
+    transition: 0.1s linear;
+}
+
+
+.left .btn {
+
+    color: white;
+}
+
+.right .btn {
+    color: black;
+}
+
+.btn:hover {
+
+    scale: 105%;
+}
+
+
+.hover-right .right {
+
+    width: 70%;
+}
+
+.hover-right .left {
+
+    width: 30%;
+}
+
+.hover-left .left {
+
+    width: 70%;
+}
+
+.hover-left .right {
+
+    width: 30%
+}
+
+
+.hover-left .l-items {
+    transform: translate(30px);
+}
+
+.hover-left .r-items {
+
+    transform: translate(40px);
+}
+
+
+.hover-right .r-items {
+    transform: translate(-30px);
+}
+
+.hover-right .l-items {
+    transform: translate(-40px);
+}
+
+
+
+@media screen and (max-width: 1500px) {
+    .left {
+        background-position: 50% calc(50% + 2px);
+        background-size: 1000px;
+    }
+
+    .right {
+        background-position: 50% calc(47% - 2px);
+        background-size: 568px;
+    }
+
+}
+
+
+@media screen and (max-width: 1450px) {
+    .left {
+        background-position: 50% 50%;
+        background-size: 840px;
+    }
+
+    .right {
+        background-position: 50% calc(47% + 1px);
+        background-size: 476px;
+    }
+
+
+
+    h1 {
+        font-size: 40px;
+    }
+
+    .btn {
+        padding: 0.8rem;
+    }
+}
+
+
+@media screen and (max-width:1200px) {
+
+    .left {
+        background-size: 650px;
+    }
+
+    .right {
+        background-position: 50% calc(48% + 1px);
+        background-size: 370px;
+    }
+
+    h1 {
+        font-size: 35px;
+    }
+
+    .btn {
+        padding: 0.6rem;
+    }
+
+}
+
+@media screen and (max-width:990px) {
+
+
+
+    h1 {
+        font-size: 30px;
+    }
+
+    .btn {
+        padding: 0.4rem;
+        font-size: 0.8rem;
+    }
+
+}
+
+
+@media screen and (max-width:940px) {
+
+
+
+    .l-items {
+
+        position: absolute;
+        top: 11vh;
+        left: 8vw;
+
+    }
+
+    .r-items {
+
+        position: absolute;
+        top: 11vh;
+        right: 8vw;
+
+    }
+
+    .btn {
+        border-width: 1px;
+
+    }
+
+}
+
+
+@media screen and (max-width:731px) {
+
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .btn {
+        padding: 0.4rem;
+        font-size: 10px;
+    }
+
+}
+
+
+@media screen and (max-width:600px) {
+
+
+    h1 {
+        font-size: 18px;
+    }
+
+    .btn {
+        padding: 0.3rem;
+        font-size: 7px;
+    }
+
+}

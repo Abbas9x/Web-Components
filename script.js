@@ -1,19 +1,14 @@
-const left = document.querySelector(".left");
-const right = document.querySelector(".right");
-const container = document.querySelector(".container");
+const toggle = document.getElementById("toggle");
+const nav = document.getElementById("nav");
 
-left.addEventListener("mouseenter", () =>
-  container.classList.add("hover-left")
-);
+toggle.addEventListener("click", () => {
+    nav.classList.toggle("active");
+});
 
-left.addEventListener("mouseleave", () =>
-  container.classList.remove("hover-left")
-);
+const buttons = document.querySelectorAll(".faq-toggle");
 
-right.addEventListener("mouseenter", () =>
-  container.classList.add("hover-right")
-);
-
-right.addEventListener("mouseleave", () =>
-  container.classList.remove("hover-right")
-);
+buttons.forEach((button) => {
+    button.addEventListener("click", () =>
+        button.parentElement.classList.toggle("active")
+    );
+});

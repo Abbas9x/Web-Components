@@ -2,33 +2,99 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Split Screen</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+  <title>Document</title>
 </head>
 
 <body>
 
-    <div class="container">
+  <!--INTERACTIVE NAVBAR-->
 
-        <div class="left">
-            <div class="l-items">
-                <h1>PlayStation 5</h1>
-                <button class="btn">buy now</button>
-            </div>
-        </div>
+  <nav class="active fade" id="nav">
+    <ul>
+      <li class="n1"> <a href="#">Home</a></li>
+      <li class="n2"> <a href="#">Works</a></li>
+      <li class="n3"> <a href="#">About</a></li>
+      <li class="n4"> <a href="#">Contact</a></li>
+    </ul>
+    <button class="ham" id="toggle">
+      <div class="line line1"></div>
+      <div class="line line2"></div>
+    </button>
+  </nav>
 
-        <div class="right">
-            <div class="r-items">
-                <h1>Xbox Series X</h1>
-                <button class="btn">buy now</button>
-            </div>
-        </div>
+  <!--LOADER-->
+
+  <div class="loader_container">
+    <div class="loader"></div>
+  </div>
+
+
+  <!--FAQS-->
+
+  <h1>Frequently Asked Questions</h1>
+  <div class="faq-container">
+    <div class="faq">
+      <h3 class="faq-title">
+        Lorem ipsum dolor sit amet.
+      </h3>
+      <p class="faq-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nobis, repellat neque non dicta
+        fugiat veritatis sit delectus perspiciatis quis?</p>
+      <button class="faq-toggle">
+        <i class="fas fa-angle-down"></i>
+      </button>
     </div>
 
+    <div class="faq active">
+      <h3 class="faq-title">
+        Lorem ipsum dolor sit amet.
+      </h3>
+      <p class="faq-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nobis, repellat neque non dicta
+        fugiat veritatis sit delectus perspiciatis quis?</p>
+      <button class="faq-toggle">
+        <i class="fas fa-angle-down"></i>
+      </button>
+    </div>
 
-    <script src="script.js"></script>
+    <div class="faq">
+      <h3 class="faq-title">
+        Lorem ipsum dolor sit amet.
+      </h3>
+      <p class="faq-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nobis, repellat neque non dicta
+        fugiat veritatis sit delectus perspiciatis quis?</p>
+      <button class="faq-toggle">
+        <i class="fas fa-angle-down"></i>
+      </button>
+    </div>
+
+    <div class="faq">
+      <h3 class="faq-title">
+        Lorem ipsum dolor sit amet.
+      </h3>
+      <p class="faq-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nobis, repellat neque non dicta
+        fugiat veritatis sit delectus perspiciatis quis?</p>
+      <button class="faq-toggle">
+        <i class="fas fa-angle-down"></i>
+      </button>
+    </div>
+
+    <div class="faq">
+      <h3 class="faq-title">
+        Lorem ipsum dolor sit amet.
+      </h3>
+      <p class="faq-text">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quod nobis, repellat neque non dicta
+        fugiat veritatis sit delectus perspiciatis quis?</p>
+      <button class="faq-toggle">
+        <i class="fas fa-angle-down"></i>
+      </button>
+    </div>
+  </div>
+
+
+  <script src="script.js"></script>
 
 </body>
 

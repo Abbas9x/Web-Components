@@ -1,276 +1,307 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
+:root {
+    --main-color: #a876aa;
+    --primary-color: #181625;
+    --accent-pink: #a876aa;
+    --accent-white: #e2e7ee
+}
 
 * {
-    margin: 0px;
+    box-sizing: border-box;
+}
+
+body {
     font-family: "Montserrat";
-    transition: 1s linear;
+    background-color: #fff4f4;
+    margin: 0;
+    height: 2000px;
 }
 
-.container {
-    height: 100vh;
-    width: 100vw;
+nav {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px 0px 0px 20px;
+    width: 70px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 35px;
+    box-shadow: gray 0px 4px 12px;
+    transition: width 0.5s ease;
+    position: fixed;
+}
+
+nav.active {
+    width: 410px;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 0;
     overflow: hidden;
-
+    transition: width 1s ease;
 }
 
-.left {
-    background-color: #222222;
-    height: 100vh;
-    width: 50vw;
-    background-attachment: fixed;
-    background-position: 50% calc(50% + 20px);
-    background-size: 1050px;
-    background-repeat: no-repeat;
-    background-image: url("https://gmedia.playstation.com/is/image/SIEPDC/dualsense-controller-product-thumbnail-01-en-14sep21?$facebook$");
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: visible;
-
+nav.active ul {
+    width: 100%;
 }
 
-.l-items {
-    position: absolute;
-    left: 5vw;
+nav ul li {
+    transform: scale(0);
+    opacity: 0;
+    transition: transform 1s ease, opacity 1s ease;
 }
 
-.right {
-    width: 50vw;
-    height: 100vh;
-    background-image: url("https://scufgaming.com/media/prismic/6d795422-45c5-4813-880c-72b9bd5260c1_instinct_base_black_xbox_series_x_controller_850x600.png");
-    background-repeat: no-repeat;
-    background-position: 50% calc(50% - 1px);
-    background-attachment: fixed;
-    background-size: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    overflow: visible;
-
-
-
+nav.active ul li {
+    opacity: 1;
+    transform: scale(1);
 }
 
-.r-items {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
+nav ul a {
     position: relative;
-    right: 5vw;
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    height: 30px;
+    text-transform: uppercase;
 }
 
+nav ul a:hover {
+    color: var(--main-color);
+    font-weight: 500;
+}
+
+
+nav ul li:hover {
+    transform: scale(1.1);
+}
+
+nav ul:hover li:not(:hover) {
+    filter: blur(2px);
+}
+
+
+.ham {
+    background-color: #fff;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    position: relative;
+    height: 30px;
+    width: 30px;
+}
+
+.ham:focus {
+    outline: 0;
+}
+
+.ham .line {
+    background-color: var(--main-color);
+    height: 2px;
+    width: 20px;
+    border-radius: 2px;
+    position: absolute;
+    top: 10px;
+    left: 5px;
+    transform-origin: center;
+    transition: transform 1s ease;
+}
+
+.ham .line2 {
+    top: auto;
+    bottom: 10px;
+}
+
+nav.active .ham .line1 {
+    transform: rotate(-45deg) translateY(5.5px);
+}
+
+nav.active .ham .line2 {
+    transform: rotate(45deg) translateY(-5.5px);
+}
+
+@media screen and (max-width: 480px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+        height: 0;
+        transition: all 0.5s ease;
+    }
+
+    nav ul li {
+        line-height: 2rem;
+    }
+
+    nav.active {
+        width: 250px;
+    }
+
+    nav.active ul {
+        height: 150px;
+    }
+}
+
+
+.loader_container {
+
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.loader {
+    position: relative;
+    height: 80px;
+    width: 80px;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 0;
+    border: 50px solid transparent;
+    border-bottom-color: var(--accent-pink);
+    animation: rotateA 2s ease-in-out infinite 0.5s,
+        color-change 2s ease-in-out infinite 1s;
+}
+
+.loader::before {
+    animation: rotateB 2s ease-in-out infinite,
+        color-change 2s ease-in-out infinite;
+}
+
+@keyframes rotateA {
+
+    0%,
+    25% {
+        transform: rotate(0deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(180deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateB {
+
+    0%,
+    25% {
+        transform: rotate(90deg);
+    }
+
+    50%,
+    75% {
+        transform: rotate(270deg);
+    }
+
+    100% {
+        transform: rotate(450deg);
+    }
+}
+
+@keyframes color-change {
+    75% {
+        border-bottom-color: var(--accent-white);
+    }
+}
 
 
 h1 {
-
-    font-size: 50px;
+    margin: 50px 0 30px;
+    text-align: center;
+    color: var(--main-color);
 }
 
-.left h1 {
-    color: white;
-
+.faq-container {
+    max-width: 600px;
+    margin: 0 auto;
+    border-radius: 10px;
+    background-color: #fff;
+    overflow: hidden;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
 }
 
+.faq {
+    box-sizing: border-box;
+    background: transparent;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+}
 
-.btn {
+.faq:not(:first-child) {
+    border-top: 1px solid #e6e6e6;
+}
 
-    font-size: 1rem;
-    text-transform: uppercase;
+.faq-title {
+    margin: 0 35px 0 0;
+}
+
+.faq-text {
+    margin: 30px 0 0;
+    display: none;
+    line-height: 1.5rem;
+}
+
+.faq.active {
+    background-color: #f8f8f8;
+    box-shadow: inset 4px 0px 0px 0px var(--main-color);
+}
+
+.faq.active .faq-title {
+    color: var(--main-color);
+}
+
+.faq.active .faq-text {
+    display: block;
+}
+
+.faq-toggle {
     background-color: transparent;
-    padding: 1rem;
-    width: 11vw;
-    margin: 2rem 0 0 0;
-    border: 3px solid;
-    transition: 0.1s linear;
+    border: 1px solid #e6e6e6;
+    color: inherit;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding-top: 3px;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    height: 30px;
+    width: 30px;
+    transition: 0.5s ease;
 }
 
-
-.left .btn {
-
-    color: white;
+.faq-toggle:focus {
+    outline: none;
 }
 
-.right .btn {
-    color: black;
-}
-
-.btn:hover {
-
-    scale: 105%;
-}
-
-
-.hover-right .right {
-
-    width: 70%;
-}
-
-.hover-right .left {
-
-    width: 30%;
-}
-
-.hover-left .left {
-
-    width: 70%;
-}
-
-.hover-left .right {
-
-    width: 30%
-}
-
-
-.hover-left .l-items {
-    transform: translate(30px);
-}
-
-.hover-left .r-items {
-
-    transform: translate(40px);
-}
-
-
-.hover-right .r-items {
-    transform: translate(-30px);
-}
-
-.hover-right .l-items {
-    transform: translate(-40px);
-}
-
-
-
-@media screen and (max-width: 1500px) {
-    .left {
-        background-position: 50% calc(50% + 2px);
-        background-size: 1000px;
-    }
-
-    .right {
-        background-position: 50% calc(47% - 2px);
-        background-size: 568px;
-    }
-
-}
-
-
-@media screen and (max-width: 1450px) {
-    .left {
-        background-position: 50% 50%;
-        background-size: 840px;
-    }
-
-    .right {
-        background-position: 50% calc(47% + 1px);
-        background-size: 476px;
-    }
-
-
-
-    h1 {
-        font-size: 40px;
-    }
-
-    .btn {
-        padding: 0.8rem;
-    }
-}
-
-
-@media screen and (max-width:1200px) {
-
-    .left {
-        background-size: 650px;
-    }
-
-    .right {
-        background-position: 50% calc(48% + 1px);
-        background-size: 370px;
-    }
-
-    h1 {
-        font-size: 35px;
-    }
-
-    .btn {
-        padding: 0.6rem;
-    }
-
-}
-
-@media screen and (max-width:990px) {
-
-
-
-    h1 {
-        font-size: 30px;
-    }
-
-    .btn {
-        padding: 0.4rem;
-        font-size: 0.8rem;
-    }
-
-}
-
-
-@media screen and (max-width:940px) {
-
-
-
-    .l-items {
-
-        position: absolute;
-        top: 11vh;
-        left: 8vw;
-
-    }
-
-    .r-items {
-
-        position: absolute;
-        top: 11vh;
-        right: 8vw;
-
-    }
-
-    .btn {
-        border-width: 1px;
-
-    }
-
-}
-
-
-@media screen and (max-width:731px) {
-
-
-    h1 {
-        font-size: 25px;
-    }
-
-    .btn {
-        padding: 0.4rem;
-        font-size: 10px;
-    }
-
-}
-
-
-@media screen and (max-width:600px) {
-
-
-    h1 {
-        font-size: 18px;
-    }
-
-    .btn {
-        padding: 0.3rem;
-        font-size: 7px;
-    }
-
+.faq.active .faq-toggle {
+    transform: rotate(180deg);
+    background-color: var(--main-color);
+    border-color: var(--main-color);
+    color: #fff;
 }
